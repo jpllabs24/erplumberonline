@@ -5,340 +5,101 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>24-Hour Plumbing</title>
 
-  <style>
-    :root {
-      --bg-dark: #0f172a;
-      --bg-light: #f8fafc;
-      --text-dark: #0f172a;
-      --text-muted: #475569;
-      --text-light: #e5e7eb;
-      --accent: #2563eb;
-      --accent-dark: #1e40af;
-      --border: #e5e7eb;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      color: var(--text-dark);
-      line-height: 1.6;
-      background: white;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.25rem;
-    }
-
-    /* ===== Header ===== */
-    header {
-      background: var(--bg-dark);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    header .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 0;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .logo {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--text-light);
-    }
-
-    nav a {
-      color: var(--text-light);
-      text-decoration: none;
-      margin-right: 1rem;
-      font-size: 0.9rem;
-      opacity: 0.85;
-    }
-
-    nav a:hover {
-      opacity: 1;
-    }
-
-    .btn-call {
-      background: var(--accent);
-      color: white;
-      padding: 0.55rem 1rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      white-space: nowrap;
-    }
-
-    .btn-call:hover {
-      background: var(--accent-dark);
-    }
-
-    /* ===== Hero ===== */
-    .hero {
-      background: linear-gradient(180deg, #f8fafc, #ffffff);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .hero-content {
-      max-width: 650px;
-      padding: 5rem 1.25rem;
-    }
-
-    .hero h2 {
-      font-size: 2.25rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      color: var(--text-muted);
-      margin-bottom: 2rem;
-      font-size: 1.05rem;
-    }
-
-    .btn {
-      display: inline-block;
-      background: var(--accent);
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .btn:hover {
-      background: var(--accent-dark);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      margin-left: 0.5rem;
-    }
-
-    .btn-secondary:hover {
-      background: var(--accent);
-      color: white;
-    }
-
-    /* ===== Sections ===== */
-    section {
-      padding: 4rem 0;
-    }
-
-    .bg-light {
-      background: var(--bg-light);
-    }
-
-    h2 {
-      font-size: 1.75rem;
-      margin-bottom: 1.5rem;
-    }
-
-    /* ===== Services ===== */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .service {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.75rem;
-    }
-
-    .service h3 {
-      margin-bottom: 0.5rem;
-      font-size: 1.05rem;
-    }
-
-    .service p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    /* ===== Testimonials ===== */
-    .testimonial {
-      background: white;
-      border-left: 4px solid var(--accent);
-      padding: 1.25rem 1.5rem;
-      margin-top: 1.25rem;
-      border-radius: 6px;
-    }
-
-    .testimonial p {
-      font-style: italic;
-      margin-bottom: 0.5rem;
-    }
-
-    .testimonial span {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    /* ===== Contact ===== */
-    .contact a {
-      display: inline-block;
-      margin-top: 1rem;
-    }
-
-    /* ===== Footer ===== */
-    footer {
-      background: var(--bg-dark);
-      color: var(--text-light);
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.85rem;
-      opacity: 0.85;
-    }
-
-    @media (max-width: 768px) {
-      .hero h2 {
-        font-size: 1.85rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
 
-  <!-- ===== Header ===== -->
-  <header>
-    <div class="container">
-      <div class="logo">24-Hour Plumbing</div>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <h1 class="logo">24-Hour Plumbing</h1>
 
-      <nav>
+      <nav class="nav">
         <a href="#home">Home</a>
         <a href="#services">Services</a>
         <a href="#about">About</a>
-        <a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact</a>
       </nav>
 
-      <a href="tel:7044733837" class="btn-call">Call: (704) 473-3837</a>
+      <a href="tel:7044733837" class="btn btn-call">
+        Call (704) 473-3837
+      </a>
     </div>
   </header>
 
-  <!-- ===== Hero ===== -->
+  <!-- Hero -->
   <section id="home" class="hero">
-    <div class="hero-content container">
+    <div class="container hero-content">
       <h2>Reliable Plumbing Services You Can Trust</h2>
       <p>
         I provide dependable plumbing services for everything from leaky faucets
-        to full installations. I’m available 24/7 to make sure your home stays
-        safe and running smoothly.
+        to full installations. Available 24/7 for emergencies.
       </p>
-      <a href="#contact" class="btn">Request a Free Quote</a>
+      <a href="#contact" class="btn btn-primary">Request a Free Quote</a>
     </div>
   </section>
 
-  <!-- ===== Services ===== -->
-  <section id="services">
+  <!-- Services -->
+  <section id="services" class="section">
     <div class="container">
-      <h2>Plumbing Services</h2>
+      <h2>Services</h2>
 
       <div class="services-grid">
-        <div class="service">
+        <div class="card">
           <h3>Leak Repairs</h3>
-          <p>
-            I quickly identify and repair leaks to prevent water damage and
-            costly repairs.
-          </p>
+          <p>Fast detection and repair to prevent water damage.</p>
         </div>
 
-        <div class="service">
+        <div class="card">
           <h3>Drain Cleaning</h3>
-          <p>
-            I clear tough clogs and restore proper flow using reliable,
-            professional equipment.
-          </p>
+          <p>Professional tools to clear tough clogs safely.</p>
         </div>
 
-        <div class="service">
-          <h3>Water Heater Service</h3>
-          <p>
-            Installation and maintenance for both tank and tankless water
-            heaters.
-          </p>
+        <div class="card">
+          <h3>Water Heaters</h3>
+          <p>Installation and maintenance for tank and tankless systems.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== About ===== -->
-  <section id="about" class="bg-light">
+  <!-- About -->
+  <section id="about" class="section section-light">
     <div class="container">
       <h2>About Me</h2>
       <p>
         I’m a licensed plumber with over 15 years of experience serving the local
-        community. I take pride in delivering honest, high-quality plumbing work
-        with clear communication and fair pricing.
+        community. I focus on honest work, clear communication, and fair pricing.
       </p>
       <p>
-        Whether it’s an emergency repair or a planned installation, my goal is
-        to get the job done right the first time and treat every home as if it
-        were my own.
+        Whether it’s an emergency or scheduled service, my goal is to get the job
+        done right the first time.
       </p>
     </div>
   </section>
 
-  <!-- ===== Testimonials ===== -->
-  <section id="testimonials">
-    <div class="container">
-      <h2>What Customers Say</h2>
-
-      <div class="testimonial">
-        <p>
-          “He came out within an hour and fixed our burst pipe quickly. Excellent
-          service.”
-        </p>
-        <span>— Sarah T.</span>
-      </div>
-
-      <div class="testimonial">
-        <p>
-          “Professional, friendly, and very reasonably priced. Highly
-          recommended.”
-        </p>
-        <span>— John D.</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Contact ===== -->
-  <section id="contact" class="bg-light contact">
+  <!-- Contact -->
+  <section id="contact" class="section section-light">
     <div class="container">
       <h2>Contact</h2>
       <p>Call or email for a free plumbing estimate.</p>
 
-      <a href="tel:7044733837" class="btn">Call (704) 473-3837</a>
-      <a href="mailto:plumberinfo24hour@gmail.com" class="btn btn-secondary">
-        Email Me
-      </a>
+      <div class="contact-actions">
+        <a href="tel:7044733837" class="btn btn-primary">
+          Call (704) 473-3837
+        </a>
+        <a href="mailto:plumberinfo24hour@gmail.com" class="btn btn-outline">
+          Email Me
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- ===== Footer ===== -->
-  <footer>
-    © 2025 24-Hour Plumbing · 24/7 Emergency Service Available
+  <!-- Footer -->
+  <footer class="footer">
+    © 2025 24-Hour Plumbing · 24/7 Emergency Service
   </footer>
 
+  <script src="main.js"></script>
 </body>
 </html>
